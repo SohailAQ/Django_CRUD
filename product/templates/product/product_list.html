@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>LIST OF Products</h1>
+{% if user.is_authenticated %}
+  <h1>Product List</h1>
+
+  <ul>
+    {% for product in object_list %}
+        <li>
+            <a href="{% url 'product-detail' product.id %}">{{ product.name }}</a>
+        </li>
+    {% endfor %}
+  </ul>
+
+    <h3>Add new Product</h3>
+  <a href="{% url 'product-create' %}">Add New Product</a>
+{% endif %}
+{% endblock %}
