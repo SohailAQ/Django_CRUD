@@ -5,9 +5,6 @@ sudo: required
 python:
   - "3.9"
 
-before_install:
-  - cd Django_CRUD/
-
 install:
   - pip install -r requirements.txt
 
